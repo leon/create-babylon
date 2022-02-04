@@ -1,4 +1,6 @@
-import * as path from 'path'
+#!/usr/bin/env node
+
+import path from 'path'
 import chalkAnimation from 'chalk-animation'
 import inquirer from 'inquirer'
 import meow from 'meow'
@@ -65,15 +67,15 @@ async function run() {
     lang: 'ts' | 'js'
     install: boolean
   }>([
-    {
-      name: 'lang',
-      type: 'list',
-      message: 'TypeScript or JavaScript?',
-      choices: [
-        { name: 'TypeScript', value: 'ts' },
-        { name: 'JavaScript', value: 'js' },
-      ],
-    },
+    // {
+    //   name: 'lang',
+    //   type: 'list',
+    //   message: 'TypeScript or JavaScript?',
+    //   choices: [
+    //     { name: 'TypeScript', value: 'ts' },
+    //     { name: 'JavaScript', value: 'js' },
+    //   ],
+    // },
     {
       name: 'install',
       type: 'confirm',
@@ -84,7 +86,7 @@ async function run() {
 
   await createApp({
     projectDir,
-    lang: answers.lang,
+    lang: answers.lang || 'ts',
     install: answers.install,
   })
 }

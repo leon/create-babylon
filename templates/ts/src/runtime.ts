@@ -1,25 +1,27 @@
-import {
-  Engine,
-  Scene,
-  ArcRotateCamera,
-  Vector3,
-  CubeTexture,
-  Color4,
-  ImageProcessingConfiguration,
-} from '@babylonjs/core'
+import { ArcRotateCamera } from '@babylonjs/core/Cameras/arcRotateCamera'
+import { Engine } from '@babylonjs/core/Engines/engine'
+import { ImageProcessingConfiguration } from '@babylonjs/core/Materials/imageProcessingConfiguration'
+import { CubeTexture } from '@babylonjs/core/Materials/Textures/cubeTexture'
+import { Color4 } from '@babylonjs/core/Maths/math.color'
+import { Vector3 } from '@babylonjs/core/Maths/math.vector'
+import { Scene } from '@babylonjs/core/scene'
+import '@babylonjs/core/Helpers/sceneHelpers' // needed to augment scene with createDefaultSkybox
+import '@babylonjs/core/Collisions/collisionCoordinator' // needed so camera can collide with meshes
 
 export let canvas: HTMLCanvasElement
 export let engine: Engine
 export let scene: Scene
 export let camera: ArcRotateCamera
-let handleResize: any
 
 export const createEngine = (hostCanvas: HTMLCanvasElement) => {
   canvas = hostCanvas
   engine = new Engine(canvas, true, {}, true)
 
-  handleResize = () => engine.resize()
+  const handleResize = () => engine.resize()
   window.addEventListener('resize', handleResize)
+  window.addEventListener('unload', () => window.removeEventListener('resize', handleResize), {
+    once: true,
+  })
 
   return engine
 }
@@ -27,6 +29,7 @@ export const createEngine = (hostCanvas: HTMLCanvasElement) => {
 export const createScene = () => {
   scene = new Scene(engine)
 
+  // change to a neutral color instead of babylon purple default
   scene.clearColor = new Color4(0.8, 0.8, 0.8, 1)
 
   // optimize scene for opaque background
@@ -53,9 +56,9 @@ export const createScene = () => {
 }
 
 export const createArcRotateCamera = () => {
-  const startAlpha = -(Math.PI / 2)
-  const startBeta = Math.PI / 2
-  const startRadius = 10
+  const startAlpha = (Math.PI / 4) * 3 // horizontal rotation
+  const startBeta = Math.PI / 4 // vertical angle
+  const startRadius = 5 // how far from center
   const startPosition = new Vector3(0, 0, 0)
   const camera = new ArcRotateCamera(
     'camera',
@@ -85,6 +88,8 @@ export const createArcRotateCamera = () => {
   camera.checkCollisions = true // make the camera collide with meshes
   camera.collisionRadius = new Vector3(1, 1, 1) // how close can the camera go to other meshes
 
+  camera.useAutoRotationBehavior = true // rotate around the target
+
   return camera
 }
 
@@ -93,8 +98,5 @@ export const createPBRSkybox = () => {
     '/environments/environment-specular.env',
     scene,
   )
-
-  const skyboxMesh = scene.createDefaultSkybox(environmentTexture, true, 1000, 0.5, true)
-
-  return skyboxMesh
+  return scene.createDefaultSkybox(environmentTexture, true, 150, 0.5, true)
 }
