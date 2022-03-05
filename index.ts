@@ -1,6 +1,7 @@
 import path from 'path'
 import { execSync } from 'child_process'
 import fse from 'fs-extra'
+import { URL } from 'url'
 
 export type Lang = 'ts' | 'js'
 
@@ -26,7 +27,7 @@ async function createApp({ projectDir, lang, install }: CreateAppArgs) {
   }
 
   // copy the template
-  let template = path.resolve(__dirname, '../templates', lang)
+  const template = new URL(`../templates/${lang}`, import.meta.url).pathname
   await fse.copy(template, projectDir)
 
   if (install) {
@@ -38,10 +39,7 @@ async function createApp({ projectDir, lang, install }: CreateAppArgs) {
     console.log(`That's it! Check the README for development and deploy instructions!`)
   } else {
     console.log(
-      `That's it! \`cd\` into "${path.relative(
-        process.cwd(),
-        projectDir,
-      )}" and check the README for development and deploy instructions!`,
+      `That's it! \`cd\` into "${relativeProjectDir}" and check the README for development and deploy instructions!`,
     )
   }
 }

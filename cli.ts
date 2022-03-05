@@ -5,7 +5,7 @@ import chalkAnimation from 'chalk-animation'
 import inquirer from 'inquirer'
 import meow from 'meow'
 
-import { createApp } from '.'
+import { createApp } from './index.js'
 
 const help = `
   Usage:

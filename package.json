@@ -1,6 +1,6 @@
 {
   "name": "create-babylon",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Create a Babylon.js app based on Vite",
   "homepage": "https://www.babylonjs.com",
   "type": "module",
