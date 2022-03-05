@@ -30,6 +30,7 @@ run().then(
 
 async function run() {
   let { input, flags, showHelp, showVersion } = meow(help, {
+    importMeta: import.meta,
     flags: {
       help: { type: 'boolean', default: false, alias: 'h' },
       version: { type: 'boolean', default: false, alias: 'v' },
