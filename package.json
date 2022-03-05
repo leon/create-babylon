@@ -34,8 +34,7 @@
     "node": ">=14"
   },
   "scripts": {
-    "build": "tsc && chmod +x dist/cli.js",
-    "publish": "npm run build"
+    "build": "tsc && chmod +x dist/cli.js"
   },
   "dependencies": {
     "chalk-animation": "^1.6.0",
