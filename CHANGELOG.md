@@ -1,3 +1,7 @@
+# 1.1.0
+
+- update to Babylon 5.1.0
+
 # 1.0.7
 
 - Update to Babylon 5.0.0-rc.1
