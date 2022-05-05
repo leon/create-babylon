@@ -1,3 +1,8 @@
+# 1.2.0
+
+- update to Babylon 5.5.0
+- Update other deps
+
 # 1.1.0
 
 - update to Babylon 5.1.0
