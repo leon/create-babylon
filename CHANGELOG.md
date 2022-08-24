@@ -1,3 +1,8 @@
+# 1.4.0
+
+- update to Babylon 5.20.0
+- update to Vite 3
+
 # 1.3.0
 
 - update to Babylon 5.10.0
