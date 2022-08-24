@@ -1,3 +1,7 @@
+# 1.4.1
+
+fix: vite 3 changed the default port to 5173
+
 # 1.4.0
 
 - update to Babylon 5.20.0
