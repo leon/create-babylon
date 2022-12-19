@@ -3,21 +3,21 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start": "vite",
+    "start": "vite --open",
     "build": "tsc && vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.34.0",
-    "@typescript-eslint/parser": "^5.34.0",
-    "eslint": "^8.22.0",
-    "prettier": "^2.7.1",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.30.0",
+    "prettier": "^2.8.1",
     "prettier-eslint": "^15.0.1",
-    "typescript": "^4.7.4",
-    "vite": "^3.0.9"
+    "typescript": "^4.9.4",
+    "vite": "^4.0.2"
   },
   "dependencies": {
-    "@babylonjs/core": "^5.20.0",
-    "@babylonjs/loaders": "^5.20.0"
+    "@babylonjs/core": "^5.38.0",
+    "@babylonjs/loaders": "^5.38.0"
   }
 }
