@@ -1,3 +1,13 @@
+# 1.6.0
+
+fix: change default layout to use top level async await
+fix: update babylon
+
+# 1.5.2
+
+fix: update to vite 4
+fix: update babylon
+
 # 1.4.1
 
 fix: vite 3 changed the default port to 5173
