@@ -1,3 +1,9 @@
+# 2.0.1
+
+fix: update babylon to 6.2.0
+fix: vite 4.3
+fix: fix vite build to manual chunk babylon into own file
+
 # 1.6.0
 
 fix: change default layout to use top level async await
