@@ -1,6 +1,6 @@
 {
   "name": "create-babylon",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Create a Babylon.js app based on Vite",
   "homepage": "https://www.babylonjs.com",
   "type": "module",
@@ -31,23 +31,23 @@
     "create-babylon": "./dist/cli.js"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
-  "packageManager": "pnpm@8.4.0",
+  "packageManager": "pnpm@8.10.2",
   "scripts": {
     "build": "tsc && chmod +x dist/cli.js"
   },
   "dependencies": {
     "chalk-animation": "^2.0.3",
     "fs-extra": "^11.1.1",
-    "inquirer": "^9.2.1",
-    "meow": "^12.0.1",
-    "semver": "^7.5.0"
+    "inquirer": "^9.2.12",
+    "meow": "^12.1.1",
+    "semver": "^7.5.4"
   },
   "devDependencies": {
-    "@types/chalk-animation": "^1.6.1",
-    "@types/fs-extra": "^11.0.1",
-    "@types/inquirer": "^9.0.3",
-    "typescript": "^5.0.4"
+    "@types/chalk-animation": "^1.6.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "typescript": "^5.2.2"
   }
 }
