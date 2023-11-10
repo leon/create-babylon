@@ -1,3 +1,8 @@
+# 2.0.2
+
+fix: update to babylon 6.29.0
+fix: vite 4.5
+
 # 2.0.1
 
 fix: update babylon to 6.2.0
